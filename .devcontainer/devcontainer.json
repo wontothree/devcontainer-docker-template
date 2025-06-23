@@ -1,0 +1,11 @@
+{
+  "name": "Ubuntu 22.04 Dev Container",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "ubuntu_dev",
+  "workspaceFolder": "/workspace",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "extensions": [],
+  "remoteUser": "root"
+}
