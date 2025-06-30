@@ -25,17 +25,19 @@
 # docker-compose.yml
 
 ```yml
-{
-  "name": "Ubuntu 22.04 Dev Container",
-  "dockerComposeFile": "docker-compose.yml",
-  "service": "ubuntu_dev",
-  "workspaceFolder": "/workspace",
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
-  },
-  "extensions": [],
-  "remoteUser": "root"
-}
+version: '3.8'
+
+services:
+  ubuntu_dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    platform: linux/amd64
+    container_name: ubuntu_2204_devcontainer
+    tty: true
+    stdin_open: true
+    volumes:
+      - ../:/workspace  # 호스트 프로젝트 루트를 컨테이너에 마운트
 ```
 
 # Dockerfile
